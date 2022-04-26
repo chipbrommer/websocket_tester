@@ -1,1 +1,77 @@
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    background-color: #e2edff;
+    padding: 15px;
+    line-height: 125%;
+}
 
+#mainnavigation,
+#bodycontent,
+#header {
+    position: absolute;
+}
+
+#mainnavigation,
+#bodycontent {
+    top: 265px;
+}
+
+#bodycontent {
+    left: 300px;
+}
+
+#mainnavigation {
+    background-color: #6699CC;
+    width: 240px;
+    border: 1px solid navy;
+}
+
+form.config fieldset {
+    border: 2px solid navy;
+    padding: 10px;
+}
+
+form.config legend {
+    font-weight: bold;
+    font-size: small;
+    color: navy;
+    padding: 5px;
+}
+
+form.config {
+    padding: 0;
+    margin: 0;
+    margin-top: -15px;
+}
+
+form.config label {
+    font-weight: bold;
+    font-size: small;
+    color: blue;
+    line-height: 150%;
+}
+
+form.config label.fixedwidth {
+    display: block;
+    width: 180px;
+    float: left;
+}
+
+form.config .buttonarea input {
+    background: navy;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid white;
+}
+
+form.config .buttonarea {
+    text-align: center;
+    padding: 2px;
+    background-color: #0066FF;
+}
+
+.logo {
+    float: right;
+    margin: 10px;
+}
