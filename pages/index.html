@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title>Wham</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script>
+  var boom = { bam: "change this" };
+  $(function() {
+
+    var ws = new WebSocket('ws://localhost:1234');
+    ws.addEventListener("open", () => { console.log("connected."); ws.send(JSON.stringify(boom)); });
+    ws.addEventListener("message", (data) => { var message = JSON.parse(data.data); $("#place").text(message.data); });
+   
+  });
+
+  function submit() {
+    $.post("/", { ip: $("#ipInput").val() });
+  }
+</script>
+<body>
+    IP:&nbsp;<input id="ipInput" type="text" /><br />
+    <input type="button" value="Submit" onclick="submit();" />
+<span id="place"></span>
+</body>
+</html>
