@@ -1,25 +1,65 @@
 <html>
 <head>
-    <title>Wham</title>
+    <title>ASEI SLAMIn v2</title>
+    <link rel="stylesheet" href="./css/style2.css">
 </head>
-<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
 <script>
-  var boom = { bam: "change this" };
-  $(function() {
+    var user = {
+        id: "123"
+    };
 
-    var ws = new WebSocket('ws://localhost:1234');
-    ws.addEventListener("open", () => { console.log("connected."); ws.send(JSON.stringify(boom)); });
-    ws.addEventListener("message", (data) => { var message = JSON.parse(data.data); $("#place").text(message.data); });
-   
-  });
+    $(function() {
+        var ws = new WebSocket('ws://localhost:1234');
 
-  function submit() {
-    $.post("/", { ip: $("#ipInput").val() });
-  }
+        ws.addEventListener("open", () => {
+            let temp = JSON.stringify(user);
+            console.log("Connected to server.");
+            ws.send(temp);
+        });
+
+        ws.addEventListener("message", (data) => {
+            console.log("Received a message!");
+            var message = JSON.parse(data.data);
+            console.log(JSON.stringify(message.ipAddress));
+            document.getElementById('serial').innerHTML = message.serial;
+            document.getElementById('swVersion').innerHTML = message.swVersion;
+            document.getElementById('buildNum').innerHTML = message.buildNum;
+            document.getElementById('gpsVersion').innerHTML = message.gpsVersion;
+            $("#ipInput").val(message.ipAddress);
+        });
+    });
+
+    function submit() {
+        $.post("/", {
+            ip: $("#ipInput").val()
+        });
+    }
 </script>
+
 <body>
+    <div id="configuration">
+        <div id="left">
+            <div class="header">
+                <h1>ATACNAV Configuration</h1>
+                <h3>Serial #:</h3>
+                <label id="serial">____</label><br />
+                <h3>SW Version:</h3>
+                <label id="swVersion">____</label><br />
+                <h3>Build Num:</h3>
+                <label id="buildNum">____</label><br />
+                <h3>GPS SW Version:</h3>
+                <label id="gpsVersion">____</label><br />
+            </div>
+        </div>
+
+        <div id="logo">
+            <img src="images/ASEI_Logo.png" class="logo" width="215" height="114" alt="ASEI -- Applied Systems Engineering Inc" />
+        </div>
+    </div>
+
     IP:&nbsp;<input id="ipInput" type="text" /><br />
     <input type="button" value="Submit" onclick="submit();" />
-<span id="place"></span>
 </body>
+
 </html>

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+
+<head>
+    <title>AM-ATACNAV Configuration</title>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div id="header" class="headerClass">
+        <h1>AM-ATACNAV Configuration</h1>
+        <h3 id="serialH">Serial #:</h3><span id="serial">Waiting...</span><br>
+        <h3 id="versionH">SW Version:</h3><span id="swversion">Waiting...</span><br>
+        <h3 id="buildH">Build Num.:</h3><span id="build">Waiting...</span><br>
+        <h3 id="gpsversionH">GPS SW Version:</h3><span id="gpsversion">Waiting...</span><br>
+    </div>
+    <div id="mainnavigation">
+        <ul>
+            <li><a href="configure">Home</a></li>
+            <li><a href="network">Network</a></li>
+            <li><a href="iridium">Iridium</a></li>
+            <li><a href="reprogram">Reprogram</a></li>
+            <li><a href="zeroize">Zeroize</a></li>
+            <li><a href="reset">Reset</a></li>
+            <li><a href="realign">Realign</a></li>
+            <li><a href="restore_defaults">Restore Defaults</a></li>
+            <li><a href="ignoreGPS">Disable GPS</a></li>
+            <li><a href="allowGPS">Re-Enable GPS</a></li>
+            <li><a href="ignoreGNSS">Disable GNSS</a></li>
+            <li><a href="allowGNSS">Re-Enable GNSS</a></li>
+            <li><a href="ignoreGPS_and_GNSS">Disable GPS & GNSS</a></li>
+            <li><a href="allowGPS_and_GNSS">Re-Enable GPS & GNSS</a></li>
+            <li><a href="rfCalManage">RF Calibration Management</a></li>
+            <li><a href="timeTest">Time Test Mode</a></li>
+        </ul>
+    </div>
+    <p><img src="images/ASEI_Logo.png" class="logo" width="215" height="114" alt="ASEI -- Applied Systems Engineering Inc" /></p>
+    <div id="bodycontent">
+        <form method="post" action="processConfig" class="config">
+            <fieldset>
+                <legend>Mounting Configuration</legend>
+                <fieldset>
+                    <legend>GPS Lever Arms</legend>
+                    <div>
+                        <label for="gpsleverx" class="fixedwidth">X (feet):</label>
+                        <input type="text" name="gpsleverx" id="gpsleverx" value="" />
+                    </div>
+                    <div>
+                        <label for="gpslevery" class="fixedwidth">Y (feet):</label>
+                        <input type="text" name="gpslevery" id="gpslevery" value="" />
+                    </div>
+                    <div>
+                        <label for="gpsleverz" class="fixedwidth" >Z (feet):</label>
+                        <input type="text" name="gpsleverz" id="gpsleverz" value="" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Aiding Source 1 Lever Arms</legend>
+                    <div>
+                        <label for="aid1leverx" class="fixedwidth" >X (feet):</label>
+                        <input type="text" name="aid1leverx" id="aid1leverx" value="" />
+                    </div>
+                    <div>
+                        <label for="aid1levery" class="fixedwidth" >Y (feet):</label>
+                        <input type="text" name="aid1levery" id="aid1levery" value="" />
+                    </div>
+                    <div>
+                        <label for="aid1leverz" class="fixedwidth" >Z (feet):</label>
+                        <input type="text" name="aid1leverz" id="aid1leverz" value="" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Aiding Source 2 Lever Arms</legend>
+                    <div>
+                        <label for="aid2leverx" class="fixedwidth" >X (feet):</label>
+                        <input type="text" name="aid2leverx" id="aid2leverx" value="" />
+                    </div>
+                    <div>
+                        <label for="aid2levery" class="fixedwidth" >Y (feet):</label>
+                        <input type="text" name="aid2levery" id="aid2levery" value="" />
+                    </div>
+                    <div>
+                        <label for="aid2leverz" class="fixedwidth" >Z (feet):</label>
+                        <input type="text" name="aid2leverz" id="aid2leverz" value="" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Aiding Source 3 Lever Arms</legend>
+                    <div>
+                        <label for="aid3leverx" class="fixedwidth" >X (feet):</label>
+                        <input type="text" name="aid3leverx" id="aid3leverx" value="" />
+                    </div>
+                    <div>
+                        <label for="aid3levery" class="fixedwidth" >Y (feet):</label>
+                        <input type="text" name="aid3levery" id="aid3levery" value="" />
+                    </div>
+                    <div>
+                        <label for="aid3leverz" class="fixedwidth" >Z (feet):</label>
+                        <input type="text" name="aid3leverz" id="aid3leverz" value="" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>GNSS Lever Arms</legend>
+                    <div>
+                        <label for="gnssleverx" class="fixedwidth" >X (feet):</label>
+                        <input type="text" name="gnssleverx" id="gnssleverx" value="" />
+                    </div>
+                    <div>
+                        <label for="gnsslevery" class="fixedwidth" >Y (feet):</label>
+                        <input type="text" name="gnsslevery" id="gnsslevery" value="" />
+                    </div>
+                    <div>
+                        <label for="gnssleverz" class="fixedwidth" >Z (feet):</label>
+                        <input type="text" name="gnssleverz" id="gnssleverz" value="" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>1553 Lever Arms</legend>
+                    <div>
+                        <label for="1553leverx" class="fixedwidth" >X (feet):</label>
+                        <input type="text" name="1553leverx" id="1553leverx" value="" />
+                    </div>
+                    <div>
+                        <label for="1553levery" class="fixedwidth" >Y (feet):</label>
+                        <input type="text" name="1553levery" id="1553levery" value="" />
+                    </div>
+                    <div>
+                        <label for="1553leverz" class="fixedwidth" >Z (feet):</label>
+                        <input type="text" name="1553leverz" id="1553leverz" value="" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>STL-2600 Lever Arms</legend>
+                    <div>
+                        <label for="stlleverx" class="fixedwidth" >X (feet):</label>
+                        <input type="text" name="stlleverx" id="stlleverx" value="" />
+                    </div>
+                    <div>
+                        <label for="stllevery" class="fixedwidth" >Y (feet):</label>
+                        <input type="text" name="stllevery" id="stllevery" value="" />
+                    </div>
+                    <div>
+                        <label for="stlleverz" class="fixedwidth" >Z (feet):</label>
+                        <input type="text" name="stlleverz" id="stlleverz" value="" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>System</legend>
+                    <div>
+                        <label for="orientation" class="fixedwidth" >Mounting Orientation</label>
+                        <input type="text" name="orientation" id="orientation" value="" />
+                    </div>
+                </fieldset>
+            </fieldset>
+            <fieldset>
+                <legend>System Configuration</legend>
+                <div>
+                    <label for="imutype" class="fixedwidth">IMU Type:</label>
+                    <select name="imutype" id="imutype">
+                    <option value="1">AG58</option>
+                    <option value="2">AG60</option>
+                    <option value="3">HG1900</option>
+                    <option value="4">AIS</option>
+                    <option value="5">HG1930</option>
+                    <option value="6">HG9900</option>
+                    <option value="7">HG9900-SE</option>
+                    <option value="8">SuperTac</option>
+                    <option value="9">HG5700 (AA01)</option>
+                </select>
+                </div>
+                <br>
+                <div>
+                    <input type="checkbox" name="almanacReq" id="almanacReq"/>
+                    <label for="almanacReq">Almanac Required</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="tmenable" id="tmenable"/>
+                    <label for="tmenable">Enable Instrumentation</label>
+                </div>
+                <div>
+                    <label for="hdgErrThresh" class="fixedwidth" >Heading Error Threshold (deg 3-sigma):</label>
+                    <input type="text" name="hdgErrThresh" id="hdgErrThresh" value="" />
+                </div>
+                <br>
+                <div>
+                    <label for="hdgErrSettlePeriod" class="fixedwidth" >Heading Error Settling Period (sec):</label>
+                    <input type="text" name="hdgErrSettlePeriod" id="hdgErrSettlePeriod" value="" />
+                </div>
+                <br>
+                <div>
+                    <label for="gpsSlnType" class="fixedwidth">GPS-153 Solution Type*</label>
+                    <select name="gpsSlnType" id="gpsSlnType">
+                    <option value="1">1 = M-Code Only</option>
+                    <option value="2">2 = Y-Code Only</option>
+                </select>
+                </div>
+                <div>
+                    <label for="clockSrc" class="fixedwidth">10Mhz Clock Source:</label>
+                    <select name="clockSrc" id="clockSrc">
+                    <option value="1">1 = CSAC</option>
+                    <option value="2">2 = External</option>
+                </select>
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>GIG Data Link Configuration</legend>
+                <div>
+                    <input type="checkbox" name="gigenable" id="gigenable"/>
+                    <label for="gigenable">Enable Msg 5000:</label>
+                </div>
+                <div>
+                    <label for="gigrate" class="fixedwidth" >GIG Message Rate (Hz):</label>
+                    <input type="text" name="gigrate" id="gigrate" value="" />
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5004" id="gig5004" />
+                    <label for="gig5004">Enable Msg 5004:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5005" id="gig5005" />
+                    <label for="gig5005">Enable Msg 5005:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5006" id="gig5006" />
+                    <label for="gig5006">Enable Msg 5006:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5007" id="gig5007" />
+                    <label for="gig5007">Enable Msg 5007:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5008" id="gig5008" />
+                    <label for="gig5008">Enable Msg 5008:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5009" id="gig5009" />
+                    <label for="gig5009">Enable Msg 5009:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5010" id="gig5010" />
+                    <label for="gig5010">Enable Msg 5010:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5100" id="gig5100" />
+                    <label for="gig5100">Enable Msg 5100:</label>
+                </div>
+                <div>
+                    <input type="checkbox" name="gig5500" id="gig5500" />
+                    <label for="gig5500">Enable Msg 5500:</label>
+                </div>
+                <div>
+                    <label for="msg5008" class="fixedwidth">Msg 5008 Rate:</label>
+                    <select name="msg5008" id="msg5008">
+                    <option value="1">1 HZ</option>
+                    <option value="2">2 HZ</option>
+                    <option value="4">4 HZ</option>
+                    <option value="4">5 HZ</option>
+                    <option value="10">10 HZ</option>
+                    <option value="20">20 HZ</option>
+                    <option value="25">25 HZ</option>
+                    <option value="50">50 HZ</option>
+                </select>
+                </div>
+                <br>
+                <div>
+                    <label for="msg5009" class="fixedwidth">Msg 5009 Rate:</label>
+                    <select name="msg5009" id="msg5009">
+                    <option value="1">1 HZ</option>
+                    <option value="2">2 HZ</option>
+                    <option value="4">4 HZ</option>
+                    <option value="5">5 HZ</option>
+                    <option value="10">10 HZ</option>
+                    <option value="20">20 HZ</option>
+                    <option value="25">25 HZ</option>
+                    <option value="50">50 HZ</option>
+                </select>
+                </div>
+                <br>
+                <div>
+                    <label for="ephemOutRate" class="fixedwidth" >Msg 5002 Rate (mins):</label>
+                    <input type="text" name="ephemOutRate" id="ephemOutRate" value="" />
+                </div>
+                <div>
+                    <label for="almOutRate" class="fixedwidth" >Msg 5003 Rate (mins):</label>
+                    <input type="text" name="almOutRate" id="almOutRate" value="" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Alignment Parameters</legend>
+                <div>
+                    <label for="realignspeed" class="fixedwidth" >Realign Speed (ft/sec):</label>
+                    <input type="text" name="realignspeed" id="realignspeed" value="" />
+                </div>
+                <div>
+                    <label for="alignduration" class="fixedwidth" >Align Duration (sec):</label>
+                    <input type="text" name="alignduration" id="alignduration" value="" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>Aiding Parameters</legend>
+                <div>
+                    <label for="llaidinit" class="fixedwidth" >Lat/Lon Aid Uncert. Init (feet):</label>
+                    <input type="text" name="llaidinit" id="llaidinit" value="" />
+                </div>
+                <br>
+                <div>
+                    <label for="altaidinit" class="fixedwidth" >Alt Aid Uncert. Init (feet):</label>
+                    <input type="text" name="altaidinit" id="altaidinit" value="" />
+                </div>
+            </fieldset>
+            <fieldset>
+                <legend>NMEA Transcoder Parameters</legend>
+                <div>
+                    <label for="outpow" class="fixedwidth" >Transcoder Output Power (dBm):</label>
+                    <input type="text" name="outpow" id="outpow" value="" />
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>GNSS RF Configuration</legend>
+                <div>
+                    <label for="antennaGain" class="fixedwidth" >GPS Antenna Gain (dB)*:</label>
+                    <input type="text" name="antennaGain" id="antennaGain" value="" />
+                </div>
+                <br>
+                <div>
+                    <label for="cableConnectorLoss" class="fixedwidth" >GPS Cable and Connector Loss (dB)*:</label>
+                    <input type="text" name="cableConnectorLoss" id="cableConnectorLoss" value="" />
+                </div>
+                <br>
+                <div>
+                    <label for="maxGpsBandDeviation" class="fixedwidth" >Max Allowed Deviation from GPS Band Freq Center (MHz)*:</label>
+                    <input type="text" name="maxGpsBandDeviation" id="maxGpsBandDeviation" value="" />
+                </div>
+                <br>
+                <br>
+                <div>
+                    <label for="interferenceBase" class="fixedwidth" >Interference Baseline (dBm)*:</label>
+                    <input type="text" name="interferenceBase" id="interferenceBase" value="" />
+                </div>
+                <br>
+                <div>
+                    <label for="mediumThresh" class="fixedwidth" >Medium Jamming Threshold (dBm)*:</label>
+                    <input type="text" name="mediumThresh" id="mediumThresh" value="" />
+                </div>
+                <br>
+                <div>
+                    <label for="strongThresh" class="fixedwidth" >Strong Jamming Threshold (dBm)*:</label>
+                    <input type="text" name="strongThresh" id="strongThresh" value="" />
+                </div>
+            </fieldset>
+            <p>Items with an '*' do not trigger a system reboot.</p>
+
+            <div class="buttonarea">
+                <input type="submit" value="Apply Configuration" />
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
