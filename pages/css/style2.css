@@ -1,0 +1,40 @@
+body {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    background-color: #e2edff;
+    padding: 15px;
+    line-height: 125%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#configuration {
+    padding: 0.5rem;
+    display: flex;
+}
+
+#left,
+#right {
+    padding: 0.5rem;
+    flex-grow: 1;
+}
+
+div.header {
+    
+}
+
+div.header > h1 {
+    padding: 0;
+    margin: 5px;
+}
+
+div.header > h3 {
+    display: inline-block;
+    padding: 0;
+    margin: 5px;
+}
+
+div.header label {
+    margin-left: 100px;
+}

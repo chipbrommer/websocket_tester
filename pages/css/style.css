@@ -11,6 +11,20 @@ body {
     position: absolute;
 }
 
+#header h3 {
+    display: inline-block;
+    padding: 0;
+    margin: 5px;
+}
+
+#header h3:after {
+    text-align: right;
+}
+
+#header span {
+    margin-left: 120px;
+}
+
 #mainnavigation,
 #bodycontent {
     top: 265px;
